@@ -1,3 +1,7 @@
 site_name: My Docs
 
+nav:
+  - Bootstrap: index.md
+  - ejemplos:
+      - maquetación: ejemplo.md
 

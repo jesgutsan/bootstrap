@@ -1,4 +1,4 @@
-# Bootstrap – Maquetación 
+# Bootstrap 
 
 ## Contenedores
 
@@ -235,3 +235,8 @@ TODAS las combinaciones útiles (ejemplos)
 **Eliminar márgenes**
 
     <div class="m-0"></div>
+
+
+Arrancar el servidor de MkDocs - mkdocs serve
+Y entrar en: http://127.0.0.1:8000
+
