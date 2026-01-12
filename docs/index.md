@@ -231,5 +231,3 @@ Separar IZQUIERDA y DERECHA
 Arrancar el servidor de MkDocs - **mkdocsserve**
 
 Y entrar en: **http://127.0.0.1:8000**
-
-hola que ase
