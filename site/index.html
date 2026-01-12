@@ -82,7 +82,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#bootstrap" class="nav-link">Bootstrap</a>
+            <li class="nav-item" data-bs-level="1"><a href="#bootstrap-maquetacion" class="nav-link">Bootstrap – Maquetación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#arranque" class="nav-link">Arranque</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#contenedores" class="nav-link">Contenedores</a>
               <ul class="nav flex-column">
@@ -111,58 +116,52 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="bootstrap">Bootstrap</h1>
+<h1 id="bootstrap-maquetacion">Bootstrap – Maquetación</h1>
+<h1 id="arranque">Arranque</h1>
 <h2 id="contenedores">Contenedores</h2>
-<pre><code>&lt;div class="container"&gt;&lt;/div&gt;
-&lt;div class="container-fluid"&gt;&lt;/div&gt;
+<pre><code>&lt;div class="contenedor"&gt;&lt;/div&gt;
+&lt;div class="fluido-del-contenedor"&gt;&lt;/div&gt;
 </code></pre>
-<p>• container → centrado</p>
-<p>• container-fluid → ancho completo</p>
+<p>• contenedor → centrado</p>
+<p>• contenedor-fluido → ancho completo</p>
 <h2 id="grid-sistema-de-rejilla">Grid (Sistema de rejilla)</h2>
-<p>Bootstrap organiza el contenido usando una <strong>rejilla de 12 columnas</strong>.<br />
-Cada fila (<code>row</code>) se divide en 12 partes iguales y las columnas (<code>col-*</code>) indican cuántas ocupa cada elemento.</p>
+<p>Bootstrap organiza el contenido usando una ** rejilla de 12 columnas ** .  </p>
+<p>Cada fila ( <code>row</code> ) se divide en 12 partes iguales y las columnas ( <code>col-*</code> ) indican cuántas ocupa cada elemento.</p>
 <h2 id="breakpoints-tamanos-de-pantalla">Breakpoints (tamaños de pantalla)</h2>
-<ul>
-<li><strong>col-</strong> → móviles (&lt;576px)</li>
-<li><strong>col-sm-</strong> → ≥576px → móvil grande</li>
-<li><strong>col-md-</strong> → ≥768px → tablet</li>
-<li><strong>col-lg-</strong> → ≥992px → portátil</li>
-<li><strong>col-xl-</strong> → ≥1200px → pantalla grande</li>
-<li><strong>col-xxl-</strong> → ≥1400px → pantalla muy grande</li>
-</ul>
-<blockquote>
-<p>Los píxeles indican <strong>CUÁNDO cambia el diseño</strong>,<br />
-las columnas indican <strong>CUÁNTO espacio ocupa</strong>.</p>
-</blockquote>
-<hr />
+<p>col- → móviles (&lt;576px)</p>
+<p>col-sm- → ≥576px → móvil grande</p>
+<p>col-md- → ≥768px → tablet</p>
+<p>col-lg- → ≥992px → portátil</p>
+<p>col-xl- → ≥1200px → pantalla grande</p>
+<p>col-xxl- → ≥1400px → pantalla muy grande</p>
+<p>Los píxeles indican CUÁNDO cambia el diseño, las columnas indican CUÁNTO espacio ocupa.</p>
 <p>La fila como 12 bloques, imagina una fila dividida así:</p>
 <pre><code>|1|2|3|4|5|6|7|8|9|10|11|12|
 </code></pre>
 <hr />
-<p>Casos básicos</p>
-<p><strong>Una columna ocupando todo</strong></p>
+<p>Casos básicos, una fila ocupando todo</p>
 <pre><code>&lt;div class="col-12"&gt;&lt;/div&gt;
 </code></pre>
 <p>Ejemplo práctico responsive</p>
 <pre><code>&lt;div class="container"&gt;
-  &lt;div class="row"&gt;
-    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
-      Primera caja
+    &lt;div class="row"&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+             Primera caja
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            Segunda caja
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            Tercera caja
+        &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
-      Segunda caja
-    &lt;/div&gt;
-    &lt;div class="col-12 col-md-6 col-lg-4"&gt;
-      Tercera caja
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <p>Comportamiento:</p>
 <p>📱 Móvil → cada caja ocupa 12 columnas (una debajo de otra)</p>
 <p>📲 Tablet (≥768px) → 6 columnas (2 por fila)</p>
 <p>💻 Portátil (≥992px) → 4 columnas (3 por fila)</p>
-<p>🧠 Idea clave </p>
+<p>🧠 Idea clave</p>
 <p>👉 Grid = estructura + responsive sin CSS propio</p>
 <p>👉 Breakpoints dicen cuándo cambia</p>
 <p>👉 Columnas dicen cuánto ocupa</p>
@@ -174,109 +173,89 @@ px-2 px-lg-5 &lt;!-- en móvil: poco padding izquierda/derecha desde ≥992px (l
 </code></pre>
 <p>👉 pequeño en móvil, grande en escritorio</p>
 <h2 id="espaciado-margin-padding">Espaciado (Margin &amp; Padding)</h2>
-<p>Bootstrap permite añadir <strong>márgenes</strong> y <strong>rellenos</strong> usando clases,
-sin escribir CSS.</p>
-<hr />
+<p>Bootstrap permite añadir márgenes y rellenos usando clases, sin escribir CSS.</p>
 <p>Tipos de espaciado</p>
-<ul>
-<li>
-<p><strong>m</strong> → margin (margen exterior)</p>
-</li>
-<li>
-<p><strong>p</strong> → padding (relleno interior)</p>
-</li>
-</ul>
-<p>Ejemplos:
-<code>m-3</code> → margen</p>
-<p><code>p-3</code> → padding</p>
+<p>m → margin (margen exterior)</p>
+<p>p → padding (relleno interior)</p>
+<p>Ejemplos: m-3 → margen</p>
+<p>p-3 → padding</p>
 <hr />
-<p><strong>Direcciones</strong></p>
-<ul>
-<li><strong>t</strong> → top (arriba)</li>
-<li><strong>b</strong> → bottom (abajo)</li>
-<li><strong>s</strong> → start (izquierda)</li>
-<li><strong>e</strong> → end (derecha)</li>
-<li><strong>x</strong> → eje horizontal (izq + der)</li>
-<li><strong>y</strong> → eje vertical (arriba + abajo)</li>
-<li><em>(sin letra)</em> → todos los lados</li>
-</ul>
+<p>Direcciones</p>
+<p>t → top (arriba)</p>
+<p>b → bottom (abajo)</p>
+<p>s → start (izquierda)</p>
+<p>e → end (derecha)</p>
+<p>x → eje horizontal (izq + der)</p>
+<p>y → eje vertical (arriba + abajo)</p>
+<p>(sin letra) → todos los lados</p>
 <p>Ejemplos:</p>
 <pre><code>mt-3   &lt;!-- margen arriba --&gt;
+
 pb-2   &lt;!-- padding abajo --&gt;
+
 px-4   &lt;!-- padding izquierda y derecha --&gt;
+
 my-5   &lt;!-- margen arriba y abajo --&gt;
 </code></pre>
 <p><strong>Tamaños disponibles</strong></p>
-<p>Bootstrap usa valores de <strong>0 a 5</strong>:</p>
-<ul>
-<li><code>0</code> → sin espacio</li>
-<li><code>1</code> → muy pequeño</li>
-<li><code>2</code> → pequeño</li>
-<li><code>3</code> → normal</li>
-<li><code>4</code> → grande</li>
-<li><code>5</code> → muy grande</li>
-</ul>
+<p>0 → sin espacio</p>
+<p>1 → muy pequeño</p>
+<p>2 → pequeño</p>
+<p>3 → normal</p>
+<p>4 → grande</p>
+<p>5 → muy grande</p>
 <p>TODAS las combinaciones útiles (ejemplos)</p>
-<p><strong>Separar por ABAJO</strong>
-    mb-1</p>
+<p>Separar por ABAJO mb-1</p>
 <pre><code>mb-3
 
 mb-5
 </code></pre>
-<hr />
-<p><strong>Separar por ARRIBA</strong>
-    mt-1</p>
+<p>Separar por ARRIBA mt-1</p>
 <pre><code>mt-3
 
 mt-5
 </code></pre>
-<hr />
-<p><strong>Separar por la IZQUIERDA</strong></p>
+<p>Separar por la IZQUIERDA</p>
 <pre><code>ms-2
-
-ms-4
 </code></pre>
-<hr />
-<p><strong>Separar por la DERECHA</strong></p>
+<p>Separar por la DERECHA</p>
 <pre><code>me-2
 
 me-4
 </code></pre>
-<hr />
-<p><strong>Separar ARRIBA y ABAJO</strong></p>
+<p>Separar ARRIBA y ABAJO</p>
 <pre><code>my-3
 
 my-5
 </code></pre>
-<hr />
-<p><strong>Separar IZQUIERDA y DERECHA</strong></p>
+<p>Separar IZQUIERDA y DERECHA</p>
 <pre><code>mx-3
 
 mx-5
 </code></pre>
 <hr />
-<p><strong>Espacio INTERIOR (padding)</strong> </p>
+<p><strong>Espacio INTERIOR (padding)</strong></p>
 <pre><code>p-3      ← todos los lados
 
-pt-2     ← arriba
+pt-2 ← arriba
 
-pb-4     ← abajo
+pb-4 ← abajo
 
-px-5     ← izquierda y derecha
+px-5 ← izquierda y derecha
 
-py-3     ← arriba y abajo
+py-3 ← arriba y abajo
 </code></pre>
 <hr />
 <p><strong>Quitar espacios</strong></p>
-<pre><code>m-0      ← sin margen
+<pre><code>m-0 ← sin margen
 
-p-0      ← sin padding
+p-0 ← relleno de pecado
 </code></pre>
 <hr />
 <h3 id="resumen-mental">Resumen mental</h3>
-<p>👉 <strong>m = fuera | p = dentro</strong><br />
-👉 <strong>t b s e x y = dirección</strong><br />
-👉 <strong>0–5 = tamaño</strong></p>
+<p>👉 <strong>m=fuera | p = dentro</strong>  </p>
+<p>👉 <strong>tbsexy=dirección</strong>  </p>
+<p>👉 <strong>0–5 = tamaño</strong></p>
 <h3 id="ejemplos-practicos">Ejemplos prácticos</h3>
 <p><strong>Separar secciones verticalmente</strong></p>
 <pre><code>&lt;div class="my-5"&gt;&lt;/div&gt;
@@ -290,8 +269,8 @@ p-0      ← sin padding
 <p><strong>Eliminar márgenes</strong></p>
 <pre><code>&lt;div class="m-0"&gt;&lt;/div&gt;
 </code></pre>
-<p>Arrancar el servidor de MkDocs - mkdocs serve
-Y entrar en: http://127.0.0.1:8000</p></div>
+<p>Arrancar el servidor de MkDocs - <strong>mkdocsserve</strong></p>
+<p>Y entrar en: <strong>http://127.0.0.1:8000</strong></p></div>
             </div>
         </div>
 
@@ -373,5 +352,5 @@ Y entrar en: http://127.0.0.1:8000</p></div>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-01-12 18:45:55.921212+00:00
+Build Date UTC : 2026-01-12 18:50:08.945436+00:00
 -->
