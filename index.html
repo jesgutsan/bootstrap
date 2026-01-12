@@ -25,9 +25,28 @@
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href=".">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
                 <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Bootstrap</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">ejemplos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="ejemplo/" class="dropdown-item">maquetación</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
                         <li class="nav-item">
@@ -35,6 +54,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="ejemplo/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +82,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#bootstrap-maquetacion" class="nav-link">Bootstrap – Maquetación</a>
+            <li class="nav-item" data-bs-level="1"><a href="#bootstrap" class="nav-link">Bootstrap</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#contenedores" class="nav-link">Contenedores</a>
               <ul class="nav flex-column">
@@ -82,7 +111,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="bootstrap-maquetacion">Bootstrap – Maquetación</h1>
+<h1 id="bootstrap">Bootstrap</h1>
 <h2 id="contenedores">Contenedores</h2>
 <pre><code>&lt;div class="container"&gt;&lt;/div&gt;
 &lt;div class="container-fluid"&gt;&lt;/div&gt;
@@ -260,7 +289,9 @@ p-0      ← sin padding
 </code></pre>
 <p><strong>Eliminar márgenes</strong></p>
 <pre><code>&lt;div class="m-0"&gt;&lt;/div&gt;
-</code></pre></div>
+</code></pre>
+<p>Arrancar el servidor de MkDocs - mkdocs serve
+Y entrar en: http://127.0.0.1:8000</p></div>
             </div>
         </div>
 
@@ -342,5 +373,5 @@ p-0      ← sin padding
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-01-05 00:28:38.482775+00:00
+Build Date UTC : 2026-01-12 18:38:07.077385+00:00
 -->
